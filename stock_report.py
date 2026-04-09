@@ -22,11 +22,8 @@ from email.mime.text import MIMEText
 
 # --- YOUR SETTINGS -----------------------------------------------------------
 
-MY_STOCKS = [
-    "AAPL", "ALL", "CAT", "NVDA", "MSFT", "AMZN",
-    "COPX", "CRPT", "GBTC", "GLDM", "GOOG",
-    "PSTG", "QQQ", "QQQM", "VGT", "VXUS", "XSD"
-]
+stocks_env = os.environ.get("MY_STOCKS", "AAPL,MSFT,GOOGL,AMZN,NVDA,JPM,VTI,QQQ")
+MY_STOCKS = stocks_env.split(",")
 
 EMAIL_FROM     = "nkinert@gmail.com"
 EMAIL_TO       = "nkinert@gmail.com"
